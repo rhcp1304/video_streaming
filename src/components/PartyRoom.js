@@ -9,7 +9,7 @@ import InputGroupWithExtras from "react-bootstrap/cjs/InputGroup";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import VideoPlayer from "./VideoPlayer";
-import ChatRoom from "./ChatRoom";
+// import ChatRoom from "./ChatRoom"; // ChatRoom is removed as per request
 import DatabaseBackend from "./DatabaseBackend";
 import URLFormatter from "./URLFormatter";
 import JitsiMeeting from './JitsiMeeting'; // Import the JitsiMeeting component
@@ -122,17 +122,15 @@ class PartyRoom extends React.Component {
                             {this.state.play_mode.toUpperCase()}
                         </Col>
                     </Row>
-                    <Row >
-                        <Col md={'auto'}>
+                    {/* Updated layout for side-by-side display */}
+                    <Row>
+                        <Col md={6}> {/* Adjust Col size as needed, e.g., md={6} for half width */}
                             <VideoPlayer url={this.state.url} database={this.state.database} is_join={this.state.is_join}/>
                         </Col>
-                        <Col md={'auto'}>
-                            <ChatRoom name={this.state.name} database={this.state.database}/>
-                        </Col>
-                        {/* Jitsi Meeting Integration: */}
-                        <Col md={'auto'}>
+                        <Col md={6}> {/* Adjust Col size as needed, e.g., md={6} for half width */}
                             <JitsiMeeting roomName={this.state.room_id} displayName={this.state.name} />
                         </Col>
+                        {/* The ChatRoom component has been removed */}
                     </Row>
                     <br/>
                     {room_controls}
