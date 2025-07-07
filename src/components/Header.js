@@ -17,7 +17,7 @@ class Header extends React.Component {
             <div>
                 <Navbar bg="info" variant="dark">
                     <LinkContainer to={"/"}>
-                    <Navbar.Brand >GDrive Party</Navbar.Brand>
+                    <Navbar.Brand >NSO Meeting</Navbar.Brand>
                     </LinkContainer>
                     <Nav className="mr-auto">
                         <LinkContainer to={"/how_to_use"}>

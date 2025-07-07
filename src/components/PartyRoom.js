@@ -19,7 +19,7 @@ class PartyRoom extends React.Component {
         super(props);
         this.state = {
             'room_id': props.room_id || "NO ROOM ID PROVIDED",
-            'title': props.title || "GDrive Party!",
+            'title': props.title || "NSO Meeting",
             'url': props.url,
             'database': new DatabaseBackend(),
             'ref': "",
@@ -39,7 +39,7 @@ class PartyRoom extends React.Component {
             this.state.database.createRoom({
                 "url": this.state.url, "title": this.state.title,
                 "mode": "pause", "time": 0.000,
-                "chats":[{"color":"info","text_color":"white","from":"GDrive-Party!","text":"Welcome to GDrive Party!","title": this.state.title}],
+                "chats":[{"color":"info","text_color":"white","from":"NSO Meeting","text":"Welcome to NSO Meeting!","title": this.state.title}],
                 "video_list": [this.state.url],
             }).then(ref => {
                 this.state.room_id = ref.id;

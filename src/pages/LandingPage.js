@@ -20,7 +20,7 @@ class LandingPage extends React.Component {
             'room_id':'',
             'name': 'Anonymous',
             'room_set': false,
-            'title': 'GDrive-Party!',
+            'title': 'NSO Property Approval Meeting',
             'url_formatter': new URLFormatter(),
         };
     }
@@ -34,7 +34,7 @@ class LandingPage extends React.Component {
                     <br/>
 
                     <Row className={"justify-content-md-center"}>
-                        <h1>GDrive Party!</h1>
+                        <h1>NSO Meeting</h1>
                     </Row>
                     <Row className={"justify-content-md-center"}>
                         <Form >
@@ -44,9 +44,9 @@ class LandingPage extends React.Component {
                                               placeholder="Anonymous"/>
                             </Form.Group>
                             <Form.Group controlId="landingForm.ControlInput2">
-                                <Form.Label className={"form_style"}>Party Title</Form.Label>
+                                <Form.Label className={"form_style"}>Meeting Title</Form.Label>
                                 <Form.Control onChange={(evt) => this.state.title = evt.target.value}
-                                              placeholder="GDrive-Party!"/>
+                                              placeholder="NSO Meeting"/>
                             </Form.Group>
                             <Form.Group controlId="landingForm.ControlInput1">
                                 <Form.Label className={"form_style"}>Video Address</Form.Label>
@@ -61,7 +61,7 @@ class LandingPage extends React.Component {
                             this.setState({'room': (<PartyRoom url={this.state.url_formatter.rewrite_url(this.state.url)} title={this.state.title} name={this.state.name}/>),
                                 "room_set":true});
                         }
-                        }>Start Party</Button>
+                        }>Start Meeting</Button>
                     </Row>
                     <Row className={"justify-content-md-center"}>
                         <Form>
@@ -77,7 +77,7 @@ class LandingPage extends React.Component {
                             console.log(this.state.url);
                             this.setState({"room_set":true,'room': (<PartyRoom name={this.state.name} room_id={this.state.room_id} is_join={true}/>)});
                         }
-                        }>Join Party</Button>
+                        }>Join Meeting</Button>
                     </Row>
                     <br/>
 
